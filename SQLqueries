@@ -7,3 +7,15 @@ user_details:
         password character(50) COLLATE pg_catalog."default" NOT NULL,
         CONSTRAINT user_details_pkey PRIMARY KEY (id)
     )
+
+contact:
+    CREATE TABLE IF NOT EXISTS public.contact
+    (
+    id bigint NOT NULL DEFAULT nextval('contact_id_seq'::regclass),
+    firstname character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    lastname character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    email character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    comments character varying(500) COLLATE pg_catalog."default" NOT NULL,
+    "timestamp" timestamp without time zone NOT NULL,
+    CONSTRAINT contact_pkey PRIMARY KEY (id)
+    )
